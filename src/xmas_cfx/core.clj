@@ -30,7 +30,8 @@
                                             :children [Button {:text "Alright."
                                                                :action #'set-xmas-message}
                                                        Button {:text "Change image"
-                                                               :action #'set-xmas-image}]}]}]))
+                                                               :action #'set-xmas-image}
+                                                       Button {:text "Buy now!"}]}]}]))
 
 
 
