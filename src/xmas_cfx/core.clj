@@ -10,13 +10,20 @@
 
 (def xmas-msg (compile [Label {:text "I'm Christmas FX"}]))
 
+(defn set-xmas-message [message]
+  (.setText xmas-msg (.getText text-message)))
+
+
+
 (def graph (compile [VBox {:id "TopLevelVBox"
                            :children [Label {:text "Hi!"}
                                       xmas-msg
                                       text-message
                                       HBox {:id "HorizontalBox"
                                             :children [Button {:text "Alright."
-                                                               :action (fn [e] (.setText xmas-msg (.getText text-message)))}]}]}]))
+                                                               :action #'set-xmas-message}]}]}]))
+
+
 
 (def ui-root (atom nil))
 
