@@ -7,9 +7,11 @@
            [javafx.stage StageBuilder]
            [javafx.scene Scene]))
 
-(def text-message (compile [TextField {:text "Yo ho ho, Merry Christmas"}]))
+(def text-message (compile [TextField {:text "Yo ho ho, Merry Christmas"
+                                       }]))
 
-(def xmas-msg (compile [Label {:text "I'm Christmas FX"}]))
+(def xmas-msg (compile [Label {:text "I'm Christmas FX"
+                               :style "-fx-font-size: 24pt;"}]))
 
 (defn set-xmas-message [message]
   (.setText xmas-msg (.getText text-message)))
