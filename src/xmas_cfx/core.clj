@@ -18,6 +18,9 @@
 
 (def xmas-image (ImageView.))
 
+(defn set-xmas-image [_]
+  (.setImage xmas-image (Image. "merry-christmas-again.png")))
+
 (def graph (compile [VBox {:id "TopLevelVBox"
                            :children [Label {:text "Hi!"}
                                       xmas-image
@@ -25,7 +28,9 @@
                                       text-message
                                       HBox {:id "HorizontalBox"
                                             :children [Button {:text "Alright."
-                                                               :action #'set-xmas-message}]}]}]))
+                                                               :action #'set-xmas-message}
+                                                       Button {:text "Change image"
+                                                               :action #'set-xmas-image}]}]}]))
 
 
 
