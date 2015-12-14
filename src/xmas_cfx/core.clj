@@ -3,6 +3,7 @@
             [clojurefx.clojurefx :refer [run-now]])
   (:import [javafx.scene.control Button Label TextField]
            [javafx.scene.layout VBox HBox]
+           [javafx.scene.image Image ImageView]
            [javafx.stage StageBuilder]
            [javafx.scene Scene]))
 
@@ -13,10 +14,11 @@
 (defn set-xmas-message [message]
   (.setText xmas-msg (.getText text-message)))
 
-
+(def xmas-image (ImageView.))
 
 (def graph (compile [VBox {:id "TopLevelVBox"
                            :children [Label {:text "Hi!"}
+                                      xmas-image
                                       xmas-msg
                                       text-message
                                       HBox {:id "HorizontalBox"
@@ -36,7 +38,7 @@
 
 (defn start []
   (do
-    
+    (.setImage xmas-image (Image. "merry-christmas.jpg"))
     (run-now (.show stage))))
 
 (defn -main
